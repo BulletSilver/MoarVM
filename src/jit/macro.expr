@@ -38,7 +38,6 @@
               (addr ,a (&offsetof MVMP6opaque body)))))
 
 
-(macro: ^func (,a) (const (&CONST_PTR ,a) ptr_sz))
 (macro: ^indirect_cu_string (,cu ,a)
     (let: (($str (load (idx (^getf ,cu  MVMCompUnit body.strings) ,a ptr_sz) ptr_sz)))
     (if (nz $str) $str
