@@ -10315,6 +10315,97 @@ static const MVMOpInfo MVM_op_infos[] = {
         { MVM_operand_write_reg | MVM_operand_obj }
     },
     {
+        MVM_OP_speshreg,
+        "speshreg",
+        "  ",
+        3,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_read_reg | MVM_operand_str, MVM_operand_read_reg | MVM_operand_str, MVM_operand_read_reg | MVM_operand_obj }
+    },
+    {
+        MVM_OP_speshresolve,
+        "speshresolve",
+        "-a",
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_write_reg | MVM_operand_obj, MVM_operand_str }
+    },
+    {
+        MVM_OP_speshguardtype,
+        "speshguardtype",
+        "  ",
+        2,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_read_reg | MVM_operand_obj, MVM_operand_read_reg | MVM_operand_obj }
+    },
+    {
+        MVM_OP_speshguardconcrete,
+        "speshguardconcrete",
+        "  ",
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_read_reg | MVM_operand_obj }
+    },
+    {
+        MVM_OP_speshguardtypeobj,
+        "speshguardtypeobj",
+        "  ",
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_read_reg | MVM_operand_obj }
+    },
+    {
+        MVM_OP_speshguardobj,
+        "speshguardobj",
+        "  ",
+        1,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_read_reg | MVM_operand_obj }
+    },
+    {
+        MVM_OP_speshguardgetattr,
+        "speshguardgetattr",
+        "  ",
+        4,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        { MVM_operand_write_reg | MVM_operand_obj, MVM_operand_read_reg | MVM_operand_obj, MVM_operand_read_reg | MVM_operand_obj, MVM_operand_str }
+    },
+    {
         MVM_OP_sp_guard,
         "sp_guard",
         ".s",
@@ -11249,7 +11340,7 @@ static const MVMOpInfo MVM_op_infos[] = {
     },
 };
 
-static const unsigned short MVM_op_counts = 866;
+static const unsigned short MVM_op_counts = 873;
 
 MVM_PUBLIC const MVMOpInfo * MVM_op_get_op(unsigned short op) {
     if (op >= MVM_op_counts)
