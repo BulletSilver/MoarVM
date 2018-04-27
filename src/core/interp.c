@@ -5791,7 +5791,7 @@ void MVM_interp_run(MVMThreadContext *tc, void (*initial_invoke)(MVMThreadContex
                 }
                 /* trampoline back to this opcode */
                 cur_op -= 2;
-                MVM_jit_code_enter(tc, cu, tc->cur_frame->spesh_cand->jitcode);
+                MVM_jit_code_enter(tc, tc->cur_frame->spesh_cand->jitcode, cu);
                 if (!tc->cur_frame) {
                     /* somehow unwound our top frame */
                     goto return_label;
